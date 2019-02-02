@@ -26,11 +26,11 @@ const AmazonButton = ({ className, href }) => (
                 <a
                     href={href}
                     target="_blank"
-                    className={`block text-left px-3 py-1 bg-amazon text-grey-lightest font-sans no-underline hover:text-grey-lightest w-32 rounded-lg ${className}`}
+                    className={`block text-left px-3 py-1 bg-amazon text-white font-sans no-underline hover:bg-amazon-darker w-32 rounded-lg ${className||''}`}
                 >
                     <span className="text-sm">Disponible en</span>
                     <Img
-                        className="block mt-1 mr-3 ml-0 mb-0"
+                        className="block mt-1 ml-0 mb-0"
                         alt="Amazon"
                         key={data.logos.edges[0].node.childImageSharp.fluid.src}
                         fluid={data.logos.edges[0].node.childImageSharp.fluid}

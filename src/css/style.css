@@ -63,14 +63,39 @@
 
 
 .transition-text-color {
-    transition: color .8s; /* For modern browsers */
+    transition: color .8s;
+    /* For modern browsers */
 }
 
 @responsive {
-    .order-0 { order: 0; }
-    .order-1 { order: 1; }
-    .order-2 { order: 2; }
-    .order-3 { order: 3; }
-    .order-4 { order: 4; }
-    .order-5 { order: 5; }
-  }
+    .order-0 {
+        order: 0;
+    }
+
+    .order-1 {
+        order: 1;
+    }
+
+    .order-2 {
+        order: 2;
+    }
+
+    .order-3 {
+        order: 3;
+    }
+
+    .order-4 {
+        order: 4;
+    }
+
+    .order-5 {
+        order: 5;
+    }
+
+    .background-image-header-section {
+        background-image: url('../images/header-section-bg.png');
+        background-repeat: no-repeat;
+        background-position: 90% bottom;
+        background-size: contain;
+    }
+}

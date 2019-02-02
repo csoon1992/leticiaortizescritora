@@ -26,11 +26,11 @@ const EciButton = ({ className, href }) => (
                 <a
                     href={href}
                     target="_blank"
-                    className={`block text-left px-3 py-1 bg-grey-lighter text-grey-dark font-sans no-underline hover:text-grey-dark w-32 rounded-lg ${className}`}
+                    className={`block text-left px-3 py-1 bg-eci text-white font-sans no-underline hover:bg-eci-darker w-32 rounded-lg ${className||''}`}
                 >
                     <span className="text-sm">Disponible en</span>
                     <Img
-                        className="block mt-1 mr-3 ml-0 mb-0"
+                        className="block mt-1 ml-0 mb-0"
                         alt="Eci"
                         key={data.logos.edges[0].node.childImageSharp.fluid.src}
                         fluid={data.logos.edges[0].node.childImageSharp.fluid}
