@@ -11,9 +11,11 @@ const ContactForm = () => (
     >
         <SectionTitle>Contacto</SectionTitle>
 
+        <p className="pb-2">
+            Rellena este formulario si quieres hacer alguna pregunta.
+        </p>
         <p className="mb-8">
-            Rellena este formulario si quieres hacer alguna pregunta, o un libro
-            firmado.
+            Si deseas un libro firmado, indicalo en el comentario.
         </p>
 
         <input type="hidden" name="form-name" value="contact-form" />
@@ -30,7 +32,7 @@ const ContactForm = () => (
         </label>
 
         <input
-            className="appearance-none block bg-grey-lighter mb-6 p-3 rounded-md text-grey-darker w-full"
+            className="appearance-none block bg-white border-color-grey-darker border mb-6 p-3 rounded-md text-grey-darker w-full"
             id="name"
             type="text"
             placeholder="Tu nombre..."
@@ -45,7 +47,7 @@ const ContactForm = () => (
         </label>
 
         <input
-            className="appearance-none block bg-grey-lighter mb-6 p-3 rounded-md text-grey-darker w-full"
+            className="appearance-none block bg-white border-color-grey-darker border mb-6 p-3 rounded-md text-grey-darker w-full"
             id="email"
             type="email"
             placeholder="ejemplo@ejemplo.com"
@@ -60,7 +62,7 @@ const ContactForm = () => (
         </label>
 
         <textarea
-            className="appearance-none bg-grey-lighter mb-6 p-3 rounded-md text-grey-darker w-full"
+            className="appearance-none bg-white border-color-grey-darker border mb-6 p-3 rounded-md text-grey-darker w-full"
             placeholder="Tu mensaje..."
             rows="8"
             required

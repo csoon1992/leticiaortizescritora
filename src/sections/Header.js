@@ -2,8 +2,8 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
-
-import CtaGroup from './CtaGroup';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import CtaGroup from '../components/CtaGroup';
 
 const handleClick = ev => {
     ev.preventDefault();
@@ -17,7 +17,10 @@ const Header = ({ siteTitle }) => (
         <div className="background-image-header-section flex-1 flex-col flex items-strech">
             <nav className="bg-transparent">
                 <div className="flex flex-wrap items-center justify-between mx-auto p-10 md:py-12 md:px-16">
-                    <Link to="/" className="flex order-1 md:inline-block w-auto md:w-1/6 no-underline text-grey-darkest">
+                    <Link
+                        to="/"
+                        className="flex order-1 md:inline-block w-auto md:w-1/6 no-underline text-grey-darkest"
+                    >
                         <span className="font-bold text-xl tracking-tight">
                             {siteTitle}
                         </span>
@@ -42,33 +45,52 @@ const Header = ({ siteTitle }) => (
                         className="hidden md:inline-block order-4 md:order-2 w-full md:w-4/6 text-center"
                     >
                         <div className="text-base">
-                            <Link
-                                to="/"
-                                className="block mt-4 px-12 md:inline-block md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
-                            >
-                                Home
-                            </Link>
-
-                            <Link
-                                to="/about"
+                            <AnchorLink
+                                href="#section-synopsis"
                                 className="block md:inline-block mt-4 px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
                             >
-                                About
-                            </Link>
+                                Sinopsis
+                            </AnchorLink>
 
-                            <Link
-                                to="/contact"
+                            <AnchorLink
+                                href="#section-contact"
                                 className="block md:inline-block mt-4 px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
                             >
-                                Contact
-                            </Link>
+                                Contacto
+                            </AnchorLink>
+
+                            <AnchorLink
+                                href="#section-author"
+                                className="block md:inline-block mt-4 px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
+                            >
+                                Autora
+                            </AnchorLink>
                         </div>
                     </div>
 
-                    <div id="rrss" className="flex order-3 md:inline-block w-full md:w-1/6 text-grey-darkest text-center md:text-right mt-2 md:mt-0">
+                    <div
+                        id="rrss"
+                        className="flex order-3 md:inline-block w-full md:w-1/6 text-grey-darkest text-center md:text-right mt-2 md:mt-0"
+                    >
                         <div className="text-xl">
-                            <a target="_blank" className="text-grey-darkest hover:text-pink-dark transition-text-color pr-4" href="https://www.facebook.com/leticiaortizescritora/" alt="Facebook Leticia Ortiz Escritora" title="Facebook Leticia Ortiz Escritora"><FaFacebook/></a>
-                            <a target="_blank" className="text-grey-darkest hover:text-pink-dark transition-text-color" href="https://www.instagram.com/leticiaortiz_escritora/" alt="Instagram Leticia Ortiz Escritora" title="Instagram Leticia Ortiz Escritora"><FaInstagram/></a>
+                            <a
+                                target="_blank"
+                                className="text-grey-darkest hover:text-pink-dark transition-text-color pr-4"
+                                href="https://www.facebook.com/leticiaortizescritora/"
+                                alt="Facebook Leticia Ortiz Escritora"
+                                title="Facebook Leticia Ortiz Escritora"
+                            >
+                                <FaFacebook />
+                            </a>
+                            <a
+                                target="_blank"
+                                className="text-grey-darkest hover:text-pink-dark transition-text-color"
+                                href="https://www.instagram.com/leticiaortiz_escritora/"
+                                alt="Instagram Leticia Ortiz Escritora"
+                                title="Instagram Leticia Ortiz Escritora"
+                            >
+                                <FaInstagram />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -77,14 +99,21 @@ const Header = ({ siteTitle }) => (
             <div className="flex-1 flex content-wrapper text-grey-darkest items-center">
                 <div className="caption-wrapper w-2/3 mx-auto">
                     <div className="caption max-w-md">
-                        <h2 className="text-6xl font-serif font-normal">¡Primer libro, ya a la venta!</h2>
+                        <h2 className="text-6xl font-serif font-normal text-black">
+                            ¡Primer libro, ya a la venta!
+                        </h2>
                         <div className="text-lg font-normal max-w-sm mt-4 leading-normal">
-                            <p>Kika hará que te enamores de su humor y te sacará sonrisas en cada capítulo.</p>
-                            <p>Si necesitas reír y te gustan las relaciones humanas, no lo dudes, esta es tu novela.</p>
+                            <p>
+                                Kika hará que te enamores de su humor y te
+                                sacará sonrisas en cada capítulo.
+                            </p>
+                            <p>
+                                Si necesitas reír y te gustan las relaciones
+                                humanas, no lo dudes, esta es tu novela.
+                            </p>
                         </div>
-                        <div className="cta mt-6 flex items-strech">
-                            <CtaGroup />
-                        </div>
+
+                        <CtaGroup />
                     </div>
                 </div>
             </div>

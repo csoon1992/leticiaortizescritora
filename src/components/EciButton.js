@@ -12,7 +12,7 @@ const EciButton = ({ className, href }) => (
                     edges {
                         node {
                             childImageSharp {
-                                fluid(maxWidth: 92) {
+                                fluid(maxWidth: 100) {
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -26,7 +26,8 @@ const EciButton = ({ className, href }) => (
                 <a
                     href={href}
                     target="_blank"
-                    className={`block text-left px-3 py-1 bg-eci text-white font-sans no-underline hover:bg-eci-darker w-32 rounded-lg ${className||''}`}
+                    className={`block text-left px-3 py-1 bg-eci text-white font-sans no-underline hover:bg-eci-darker w-32 rounded-lg ${className ||
+                        ''}`}
                 >
                     <span className="text-sm">Disponible en</span>
                     <Img

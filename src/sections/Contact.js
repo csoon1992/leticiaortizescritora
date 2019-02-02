@@ -21,7 +21,7 @@ const Contact = () => (
             }
         `}
         render={data => (
-            <div id="section-contact" className="p-8">
+            <div id="section-contact" className="p-8 bg-grey-lighter">
                 <div className="container mx-auto">
                     <div className="md:flex md:flex-row md:items-stretch py-8 ">
                         <ContactForm />
