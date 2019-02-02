@@ -63,8 +63,8 @@ const Header = ({ siteTitle }) => (
 
             <div id="rrss" className="flex order-3 md:inline-block w-full md:w-1/6 text-grey-darkest text-center md:text-right mt-2 md:mt-0">
                 <div className="text-xl">
-                    <a className="text-grey-darkest pr-4" href="https://www.facebook.com/leticiaortizescritora/" alt="Facebook Leticia Ortiz Escritora" title="Facebook Leticia Ortiz Escritora"><FaFacebook/></a>
-                    <a className="text-grey-darkest" href="https://www.instagram.com/leticiaortiz_escritora/" alt="Instagram Leticia Ortiz Escritora" title="Facebook Leticia Ortiz Escritora"><FaInstagram/></a>
+                    <a target="_blank" className="text-grey-darkest pr-4" href="https://www.facebook.com/leticiaortizescritora/" alt="Facebook Leticia Ortiz Escritora" title="Facebook Leticia Ortiz Escritora"><FaFacebook/></a>
+                    <a target="_blank" className="text-grey-darkest" href="https://www.instagram.com/leticiaortiz_escritora/" alt="Instagram Leticia Ortiz Escritora" title="Instagram Leticia Ortiz Escritora"><FaInstagram/></a>
                 </div>
             </div>
         </div>
