@@ -12,7 +12,9 @@
     "gatsby-plugin-postcss": "^2.0.2",
     "gatsby-plugin-purgecss": "^3.1.0",
     "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-robots-txt": "^1.4.0",
     "gatsby-plugin-sharp": "^2.0.14",
+    "gatsby-plugin-sitemap": "^2.0.5",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.8",
     "prop-types": "^15.6.2",
@@ -20,6 +22,7 @@
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.3.0",
+    "styled-components": "^4.1.3",
     "tailwindcss": "^0.7.3"
   },
   "keywords": [

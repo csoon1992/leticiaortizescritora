@@ -126,6 +126,8 @@ let colors = {
     'pink-light': '#fa7ea8',
     'pink-lighter': '#ffbbca',
     'pink-lightest': '#ffebef',
+
+    amazon: '#231F20',
 };
 
 module.exports = {
