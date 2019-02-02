@@ -4,9 +4,11 @@ module.exports = {
         description:
             'Leticia Ortiz, escritora. Nuevo libro: Kika, nada pasa hasta que pasa.',
         author: '@csoon1992 and @algm',
+        siteUrl: 'https://leticiaortizescritora.com',
     },
     plugins: [
         'gatsby-plugin-react-helmet',
+        'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-plugin-google-fonts',
             options: {
@@ -18,6 +20,21 @@ module.exports = {
             options: {
                 name: 'images',
                 path: `${__dirname}/src/images`,
+            },
+        },
+        {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                host: 'https://leticiaortizescritora.com',
+                sitemap: 'https://leticiaortizescritora.com/sitemap.xml',
+                env: {
+                    development: {
+                        policy: [{ userAgent: '*', disallow: ['/'] }],
+                    },
+                    production: {
+                        policy: [{ userAgent: '*', allow: '/' }],
+                    },
+                },
             },
         },
         'gatsby-transformer-sharp',
