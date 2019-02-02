@@ -1,18 +1,31 @@
 import React from 'react';
 
 import Layout from '../components/layout';
-import Header from '../components/header';
+import Header from '../sections/Header';
 import SEO from '../components/seo';
-import catAndHumanIllustration from '../images/cat-and-human-illustration.svg';
+import Contact from '../sections/Contact';
+import Synopsis from '../sections/Synopsis';
+import Author from '../sections/Author';
 
 const IndexPage = () => (
     <Layout>
         <SEO
             title="Home"
-            keywords={['gatsby', 'tailwind', 'react', 'tailwindcss']}
+            keywords={[
+                'novelas',
+                'leticia ortiz',
+                'kika, nada pasa hasta que pasa',
+                'escritora',
+                'humor',
+                'romance',
+            ]}
         />
 
         <Header siteTitle="Leticia Ortiz escritora" />
+
+        <Synopsis />
+        <Contact />
+        <Author />
     </Layout>
 );
 

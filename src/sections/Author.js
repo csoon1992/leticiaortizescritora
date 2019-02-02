@@ -43,17 +43,17 @@ const Author = () => (
             <div className="flex-1">
                 <div className="font-serif text-base leading-normal pl-0 pt-0 p-8">
                     <SectionTitle>Sobre la autora</SectionTitle>
-                    <p className="mb-2">
+                    <p className="mb-2 max-w-md text-lg">
                         Leticia Ortiz nació en Linares en 1985 aunque
                         actualmente reside en Elche. Desde temprana edad tuvo
                         dos vocaciones: la química y la escritura. Comenzó a
                         escribir poesía a sus trece años, siendo galardonada
                         años después en el certamen provincial “Federico García
                         Lorca”. En 2016 decide escribir su primera novela en
-                        prosa: Kika, nada pasa hasta que pasa, una comedia
-                        romántica en la que desata todo su humor, dándole ese
-                        toque cómico personal que se encuentra presente en gran
-                        parte del libro.
+                        prosa: <em>Kika, nada pasa hasta que pasa</em>, una
+                        comedia romántica en la que desata todo su humor,
+                        dándole ese toque cómico personal que se encuentra
+                        presente en gran parte del libro.
                     </p>
                 </div>
             </div>

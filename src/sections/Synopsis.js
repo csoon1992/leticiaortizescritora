@@ -2,6 +2,7 @@ import React from 'react';
 import SectionTitle from '../components/SectionTitle';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import CtaGroup from '../components/CtaGroup';
 
 const Synopsis = () => (
     <div id="section-synopsis" className="p-8">
@@ -10,7 +11,7 @@ const Synopsis = () => (
                 <SectionTitle className="uppercase">
                     Kika, nada pasa hasta que pasa
                 </SectionTitle>
-                <div className="font-serif text-base leading-normal pl-0 pt-0 p-8">
+                <div className="font-serif text-base leading-normal pl-0 py-0">
                     <p className="mb-2">
                         Que Kika se cruza con situaciones inesperadas es algo
                         que comprobaréis desde el principio. Ella estudió
@@ -43,6 +44,8 @@ const Synopsis = () => (
                         comprobarlo.
                     </p>
                 </div>
+
+                <CtaGroup />
             </div>
             <div className="flex flex-row items-center content-center p-8 flex-1">
                 <StaticQuery
@@ -54,7 +57,7 @@ const Synopsis = () => (
                                 edges {
                                     node {
                                         childImageSharp {
-                                            fluid(maxWidth: 333) {
+                                            fluid(maxWidth: 600) {
                                                 ...GatsbyImageSharpFluid
                                             }
                                         }
