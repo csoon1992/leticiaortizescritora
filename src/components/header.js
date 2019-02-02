@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const handleClick = ev => {
     ev.preventDefault();
@@ -10,29 +11,20 @@ const handleClick = ev => {
 };
 
 const Header = ({ siteTitle }) => (
-    <nav className="bg-teal">
-        <div className="flex flex-wrap items-center justify-between max-w-xl mx-auto p-4 md:p-8">
-            <Link to="/" className="flex items-center no-underline text-white">
-                <svg
-                    className="fill-current h-8 mr-2 w-8"
-                    width="54"
-                    height="54"
-                    viewBox="0 0 54 54"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
-                </svg>
+    <nav className="bg-transparent">
+        <div className="flex flex-wrap items-center justify-between mx-auto p-10 md:py-12 md:px-16">
+            <Link to="/" className="flex order-1 md:inline-block w-auto md:w-1/6 no-underline text-grey-darkest">
                 <span className="font-bold text-xl tracking-tight">
                     {siteTitle}
                 </span>
             </Link>
 
             <button
-                className="block md:hidden border border-white flex items-center px-3 py-2 rounded text-white"
+                className="flex md:hidden order-2 flex items-center ml-3 py-2 px-0 text-grey-darkest focus:outline-none"
                 onClick={handleClick}
             >
                 <svg
-                    className="fill-current h-3 w-3"
+                    className="fill-current h-4 w-4"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                 >
@@ -43,29 +35,36 @@ const Header = ({ siteTitle }) => (
 
             <div
                 id="nav"
-                className="hidden md:flex md:items-center w-full md:w-auto"
+                className="hidden md:inline-block order-4 md:order-2 w-full md:w-4/6 text-center"
             >
-                <div className="text-sm">
+                <div className="text-base">
                     <Link
                         to="/"
-                        className="block mt-4 md:inline-block md:mt-0 mr-6 no-underline text-white"
+                        className="block mt-4 px-12 md:inline-block md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
                     >
                         Home
                     </Link>
 
                     <Link
                         to="/about"
-                        className="block md:inline-block mt-4 md:mt-0 mr-6 no-underline text-white"
+                        className="block md:inline-block mt-4 px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
                     >
                         About
                     </Link>
 
                     <Link
                         to="/contact"
-                        className="block md:inline-block mt-4 md:mt-0 no-underline text-white"
+                        className="block md:inline-block mt-4 px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
                     >
                         Contact
                     </Link>
+                </div>
+            </div>
+
+            <div id="rrss" className="flex order-3 md:inline-block w-full md:w-1/6 text-grey-darkest text-center md:text-right mt-2 md:mt-0">
+                <div className="text-xl">
+                    <a className="text-grey-darkest pr-4" href="https://www.facebook.com/leticiaortizescritora/" alt="Facebook Leticia Ortiz Escritora" title="Facebook Leticia Ortiz Escritora"><FaFacebook/></a>
+                    <a className="text-grey-darkest" href="https://www.instagram.com/leticiaortiz_escritora/" alt="Instagram Leticia Ortiz Escritora" title="Facebook Leticia Ortiz Escritora"><FaInstagram/></a>
                 </div>
             </div>
         </div>
@@ -77,7 +76,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-    siteTitle: ``,
+    siteTitle: '',
 };
 
 export default Header;
