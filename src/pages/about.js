@@ -8,6 +8,7 @@ import AmazonButton from '../components/AmazonButton';
 import EciButton from '../components/EciButton';
 import LetrameButton from '../components/LetrameButton';
 import Contact from '../sections/Contact';
+import Synopsis from '../sections/Synopsis';
 
 const AboutPage = () => (
     <Layout>
@@ -33,7 +34,7 @@ const AboutPage = () => (
                 <LetrameButton href="https://www.letrame.com/producto/kika-nada-pasa-hasta-que-pasa/" />
             </div>
         </div>
-
+        <Synopsis />
         <Contact />
     </Layout>
 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from './SectionTitle';
 
 const ContactForm = () => (
     <form
@@ -8,7 +9,7 @@ const ContactForm = () => (
         data-netlify="true"
         netlify-honeypot="full-name"
     >
-        <h2 className="font-serif text-5xl font-normal mb-3">Contacto</h2>
+        <SectionTitle>Contacto</SectionTitle>
 
         <p className="mb-8">
             Rellena este formulario si quieres hacer alguna pregunta, o un libro
