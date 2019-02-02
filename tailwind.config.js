@@ -128,6 +128,12 @@ let colors = {
     'pink-lightest': '#ffebef',
 
     amazon: '#231F20',
+    'amazon-darker': '#1d1a1b',
+    eci: '#019040',
+    'eci-darker': '#007a36',
+    letrame: '#0184DC',
+    'letrame-darker': '#0070bb',
+    'pink-black': '#433A3D',
 };
 
 module.exports = {
@@ -259,6 +265,7 @@ module.exports = {
         '3xl': '1.875rem', // 30px
         '4xl': '2.25rem', // 36px
         '5xl': '3rem', // 48px
+        '6xl': '5rem', // 80px
     },
 
     /*
