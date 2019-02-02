@@ -9,6 +9,7 @@ import EciButton from '../components/EciButton';
 import LetrameButton from '../components/LetrameButton';
 import Contact from '../sections/Contact';
 import Synopsis from '../sections/Synopsis';
+import Author from '../sections/Author';
 
 const AboutPage = () => (
     <Layout>
@@ -17,7 +18,7 @@ const AboutPage = () => (
             keywords={['gatsby', 'tailwind', 'react', 'tailwindcss']}
         />
 
-        <div className="flex flex-col md:flex-row items-center mb-3">
+        <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-2/3 md:mr-8">
                 <h1>Buttons</h1>
             </div>
@@ -36,6 +37,7 @@ const AboutPage = () => (
         </div>
         <Synopsis />
         <Contact />
+        <Author />
     </Layout>
 );
 

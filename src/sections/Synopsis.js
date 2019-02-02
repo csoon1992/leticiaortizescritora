@@ -4,8 +4,8 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 const Synopsis = () => (
-    <div id="section-synopsis">
-        <div className="flex flex-row content-center items-stretch">
+    <div id="section-synopsis" className="p-8">
+        <div className="flex flex-row content-center items-stretch container  mx-auto">
             <div className="max-w-md">
                 <SectionTitle className="uppercase">
                     Kika, nada pasa hasta que pasa
