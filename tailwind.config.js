@@ -126,6 +126,14 @@ let colors = {
     'pink-light': '#fa7ea8',
     'pink-lighter': '#ffbbca',
     'pink-lightest': '#ffebef',
+
+    amazon: '#231F20',
+    'amazon-darker': '#1d1a1b',
+    eci: '#019040',
+    'eci-darker': '#007a36',
+    letrame: '#0184DC',
+    'letrame-darker': '#0070bb',
+    'pink-black': '#433A3D',
 };
 
 module.exports = {
@@ -257,6 +265,7 @@ module.exports = {
         '3xl': '1.875rem', // 30px
         '4xl': '2.25rem', // 36px
         '5xl': '3rem', // 48px
+        '6xl': '5rem', // 80px
     },
 
     /*
@@ -495,6 +504,9 @@ module.exports = {
         '3/5': '60%',
         '4/5': '80%',
         '1/6': '16.66667%',
+        '2/6': '33.33333%',
+        '3/6': '50%',
+        '4/6': '66.66666%',
         '5/6': '83.33333%',
         full: '100%',
         screen: '100vw',
@@ -535,6 +547,7 @@ module.exports = {
         '64': '16rem',
         full: '100%',
         screen: '100vh',
+        s75: '75vh',
     },
 
     /*
@@ -887,8 +900,8 @@ module.exports = {
         minHeight: ['responsive'],
         minWidth: ['responsive'],
         negativeMargin: ['responsive'],
-        objectFit: false,
-        objectPosition: false,
+        objectFit: ['responsive'],
+        objectPosition: ['responsive'],
         opacity: ['responsive'],
         outline: ['focus'],
         overflow: ['responsive'],
