@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => (
             </div>
             <div className="absolute pin-b pin-x h-screen relative z-0">
                 <div className="flex flex-row-reverse justify-stretch content-stretch items-end h-screen">
-                    <div className="w-2/3 h-screen relative flex flex-col-reverse">
+                    <div className="md:w-full lg:w-2/3 h-screen relative flex flex-col-reverse">
                         <StaticQuery
                             query={graphql`
                                 query HeaderQuery {
