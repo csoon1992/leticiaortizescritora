@@ -5,12 +5,13 @@ import Img from 'gatsby-image';
 import CtaGroup from '../components/CtaGroup';
 
 const Synopsis = () => (
-    <div id="section-synopsis" className="p-8 pt-10">
+    <div id="section-synopsis" className="px-8 py-10">
         <div className="flex flex-row content-center items-stretch container mx-auto">
-            <div className="max-w-md">
+            <div className="lg:max-w-md">
                 <SectionTitle className="uppercase">
                     <span className="text-red">Kika,</span> nada pasa hasta que <span className="text-red">pasa</span>
                 </SectionTitle>
+
                 <div className="font-serif text-base leading-normal pl-0 py-0">
                     <p className="mb-2">
                         Que Kika se cruza con situaciones inesperadas es algo
@@ -47,7 +48,8 @@ const Synopsis = () => (
 
                 <CtaGroup />
             </div>
-            <div className="flex flex-row items-center content-center p-8 flex-1">
+
+            <div className="md:hidden lg:flex flex-row items-center content-center p-8 flex-1">
                 <StaticQuery
                     query={graphql`
                         query PortadaKikaQuery {
