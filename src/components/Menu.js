@@ -12,7 +12,7 @@ const handleClick = ev => {
 
 const Menu = ({ siteTitle }) => (
     <nav className="bg-transparent">
-        <div className="flex flex-wrap items-center justify-between mx-auto p-10 md:py-6 md:px-8 lg:py-12 lg:px-16">
+        <div className="flex flex-wrap items-center justify-between mx-auto py-6 md:py-6 px-8 lg:py-12 lg:px-16">
             <Link
                 to="/"
                 className="flex order-1 md:inline-block w-auto md:w-2/6 lg:w-1/6 no-underline text-grey-darkest"
