@@ -46,11 +46,11 @@ class ContactForm extends React.Component {
     render() {
         let content = <form
             name="contact-form"
-            className="md:w-1/2 mx-auto"
+            className="lg:w-1/2 mx-auto"
             data-netlify="true"
             netlify-honeypot="full-name"
             onSubmit={this.handleSubmit}>
-            <SectionTitle>Contacto</SectionTitle>
+            <SectionTitle className="text-center">Contacto</SectionTitle>
 
             <p className="pb-2">
                 Rellena este formulario si quieres hacer alguna pregunta.

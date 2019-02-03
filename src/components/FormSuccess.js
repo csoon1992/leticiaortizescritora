@@ -2,8 +2,8 @@ import React from 'react';
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
 
 const FormSuccess = (props) => (
-    <div className="text-pink-darkest px-4 py-3 text-center" role="alert">
-        <div className="py-1 text-6xl pb-4">
+    <div className="text-pink-darkest px-4 text-center" role="alert">
+        <div className="text-6xl">
             <IoIosCheckmarkCircleOutline/>
         </div>
 
