@@ -59,6 +59,28 @@ module.exports = {
                 purgeOnly: ['src/css/style.css'], // Purge only tailwind
             },
         },
+
+        {
+            resolve: 'gatsby-plugin-google-analytics',
+            options: {
+                trackingId: 'UA-129053715-2',
+                // Puts tracking script in the head instead of the body
+                head: false,
+                // Setting this parameter is optional
+                anonymize: true,
+                // Setting this parameter is also optional
+                respectDNT: true,
+            },
+        },
+
+        {
+            resolve: 'gatsby-plugin-netlify-functions',
+            options: {
+                functionsSrc: `${__dirname}/src/functions`,
+                functionsOutput: `${__dirname}/functions`,
+            },
+        },
+
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.app/offline
         // 'gatsby-plugin-offline',
