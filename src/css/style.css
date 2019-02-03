@@ -97,6 +97,14 @@
         background-position: 90% bottom;
         background-size: 50%;
     }*/
+
+    .push-header {
+        right: -23%;
+    }
+
+    .header-image {
+        width: 37.5rem;
+    }
 }
 
 .debug * {

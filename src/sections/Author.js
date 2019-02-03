@@ -43,7 +43,7 @@ const Author = () => (
             <div className="flex-1">
                 <div className="font-serif text-base leading-normal pl-0 pt-0 md:p-8">
                     <SectionTitle>Sobre la autora</SectionTitle>
-                    <p className="mb-2 max-w-md text-lg">
+                    <p className="mb-2 max-w-md text-base sm:text-lg">
                         Leticia Ortiz nació en Linares en 1985 aunque
                         actualmente reside en Elche. Desde temprana edad tuvo
                         dos vocaciones: la química y la escritura. Comenzó a
