@@ -18,6 +18,7 @@ const CtaGroup = ({ className, href }) => (
 
         <LetrameButton 
             href="https://www.letrame.com/producto/kika-nada-pasa-hasta-que-pasa/"
+            className="mb-3 sm:mb-0"
         />
     </div>
 );
