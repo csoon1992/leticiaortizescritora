@@ -40,7 +40,7 @@ const Menu = ({ siteTitle }) => (
                 id="nav"
                 className="hidden md:inline-block order-4 md:order-2 w-full md:w-4/6 text-center"
             >
-                <div className="text-base">
+                <div className="text-xl">
                     <AnchorLink
                         href="#section-synopsis"
                         className="block md:inline-block mt-4 px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
@@ -68,7 +68,7 @@ const Menu = ({ siteTitle }) => (
                 id="rrss"
                 className="flex order-3 md:inline-block w-full md:w-1/6 text-grey-darkest text-center md:text-right mt-2 md:mt-0"
             >
-                <div className="text-xl">
+                <div className="text-2xl">
                     <a
                         target="_blank"
                         rel="noref noopener"
