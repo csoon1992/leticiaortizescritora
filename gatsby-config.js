@@ -46,7 +46,7 @@ module.exports = {
                 short_name: 'leticiaortizescritora',
                 start_url: '/',
                 background_color: '#ffffff',
-                theme_color: '#4dc0b5',
+                theme_color: '#ffebef',
                 display: 'minimal-ui',
                 icon: 'src/images/firma.png', // This path is relative to the root of the site.
             },
