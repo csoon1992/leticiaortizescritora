@@ -17,9 +17,9 @@ const Menu = ({ siteTitle }) => (
 
             <div
                 id="nav"
-                className="md:inline-block w-full md:w-3/6 lg:w-4/6 sm:text-center"
+                className="md:inline-block w-full md:w-3/6 lg:w-4/6 sm:text-left"
             >
-                <div className="text-md sm:text-lg lg:text-xl md:text-left lg:text-center">
+                <div className="text-md sm:text-lg lg:text-xl md:text-left">
                     <AnchorLink
                         href="#section-synopsis"
                         className="block inline-block mt-1 sm:mt-4 px-0 pr-2 sm:px-4 lg:px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
