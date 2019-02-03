@@ -48,7 +48,7 @@ module.exports = {
                 background_color: '#ffffff',
                 theme_color: '#4dc0b5',
                 display: 'minimal-ui',
-                icon: 'src/images/tailwind-icon.png', // This path is relative to the root of the site.
+                icon: 'src/images/firma.png', // This path is relative to the root of the site.
             },
         },
         'gatsby-plugin-postcss',
