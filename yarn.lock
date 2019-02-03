@@ -3322,6 +3322,7 @@ eslint-plugin-jsx-a11y@^6.0.3:
 eslint-plugin-react@^7.12.4, eslint-plugin-react@^7.8.2:
   version "7.12.4"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.12.4.tgz#b1ecf26479d61aee650da612e425c53a99f48c8c"
+  integrity sha512-1puHJkXJY+oS1t467MjbqjvX53uQ05HXwjqDgdbGBqf5j9eeydI54G3KwiJmWciQ0HTBacIKw2jgwSBSH3yfgQ==
   dependencies:
     array-includes "^3.0.3"
     doctrine "^2.1.0"
@@ -7979,6 +7980,11 @@ react-is@^16.6.0:
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-parallax@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-2.1.0.tgz#3e9e88c8663d7dbe1019322cec2bb791fc6c6ead"
+  integrity sha512-L2cA4u5d1I0jovKJUVWL4ygAhuzCfHLTOTuU020nj87McapHzrsbuuICSfKCH1woHDgWuBuftthBi0cVph+gWg==
 
 react-side-effect@^1.1.0:
   version "1.1.5"

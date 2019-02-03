@@ -61,9 +61,8 @@
  * @import "utilities/skew-transforms";
  */
 
-
 .transition-text-color {
-    transition: color .8s;
+    transition: color 0.8s;
     /* For modern browsers */
 }
 
@@ -92,10 +91,14 @@
         order: 5;
     }
 
-    .background-image-header-section {
+    /*.background-image-header-section {
         background-image: url('../images/header-section-bg.png');
         background-repeat: no-repeat;
         background-position: 90% bottom;
-        background-size: contain;
-    }
+        background-size: 50%;
+    }*/
+}
+
+.debug * {
+    outline: 1px solid red;
 }
