@@ -1,7 +1,6 @@
 import React from 'react';
 import ContactForm from '../components/ContactForm';
 import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 const Contact = () => (
     <StaticQuery
@@ -21,9 +20,9 @@ const Contact = () => (
             }
         `}
         render={data => (
-            <div id="section-contact" className="p-8 bg-grey-lighter">
+            <div id="section-contact" className="px-8 py-10 bg-grey-lighter">
                 <div className="container mx-auto">
-                    <div className="md:flex md:flex-row md:items-stretch py-8 ">
+                    <div className="md:flex md:flex-row md:items-stretch">
                         <ContactForm />
                     </div>
                 </div>
