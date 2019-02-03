@@ -9,7 +9,8 @@ const Synopsis = () => (
         <div className="flex flex-row content-center items-stretch container mx-auto">
             <div className="lg:max-w-md">
                 <SectionTitle className="uppercase">
-                    <span className="text-red">Kika,</span> nada pasa hasta que <span className="text-red">pasa</span>
+                    <span className="text-red">Kika,</span> nada pasa hasta que{' '}
+                    <span className="text-red">pasa</span>
                 </SectionTitle>
 
                 <div className="font-serif text-base leading-normal pl-0 py-0">
@@ -49,7 +50,7 @@ const Synopsis = () => (
                 <CtaGroup />
             </div>
 
-            <div className="md:hidden lg:flex flex-row items-center content-center p-8 flex-1">
+            <div className="hidden lg:flex flex-row items-center content-center p-8 flex-1">
                 <StaticQuery
                     query={graphql`
                         query PortadaKikaQuery {

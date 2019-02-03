@@ -5,8 +5,8 @@ import Img from 'gatsby-image';
 
 const Author = () => (
     <div id="section-author" className="bg-pink-lightest pt-8 px-8">
-        <div className="flex flex-row content-center items-stretch container mx-auto">
-            <div className="flex flex-row justify-end items-stretch content-stretch p-8 pb-0 w-1/3">
+        <div className="flex flex-col-reverse lg:flex-row content-center items-stretch container mx-auto">
+            <div className="lg:flex lg:flex-row justify-end items-stretch content-stretch p-8 pb-0 w-full lg:w-1/3">
                 <StaticQuery
                     query={graphql`
                         query AutoraQuery {
@@ -41,7 +41,7 @@ const Author = () => (
                 />
             </div>
             <div className="flex-1">
-                <div className="font-serif text-base leading-normal pl-0 pt-0 p-8">
+                <div className="font-serif text-base leading-normal pl-0 pt-0 md:p-8">
                     <SectionTitle>Sobre la autora</SectionTitle>
                     <p className="mb-2 max-w-md text-lg">
                         Leticia Ortiz nació en Linares en 1985 aunque

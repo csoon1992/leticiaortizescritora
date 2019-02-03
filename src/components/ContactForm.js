@@ -21,7 +21,7 @@ class ContactForm extends React.Component {
         };
     }
 
-    handleSubmit = e => {
+    handleSubmit(e) {
         const form = e.target;
 
         fetch('/', {
@@ -55,21 +55,24 @@ class ContactForm extends React.Component {
             .catch(error => alert(error));
 
         e.preventDefault();
-    };
+    }
 
-    handleChange = e =>
+    handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value,
         });
+    }
 
     render() {
-        let content = <form
-            name="contact-form"
-            className="lg:w-1/2 mx-auto"
-            data-netlify="true"
-            netlify-honeypot="full-name"
-            onSubmit={this.handleSubmit}>
-            <SectionTitle className="text-center">Contacto</SectionTitle>
+        let content = (
+            <form
+                name="contact-form"
+                className="md:w-1/2 mx-auto"
+                data-netlify="true"
+                netlify-honeypot="full-name"
+                onSubmit={this.handleSubmit}
+            >
+                <SectionTitle>Contacto</SectionTitle>
 
                 <p className="pb-2">
                     Rellena este formulario si quieres hacer alguna pregunta.
