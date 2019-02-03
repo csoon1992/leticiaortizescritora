@@ -1,0 +1,42 @@
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
+
+const Footer = () => (
+    <footer id="section-footer" className="bg-pink-darkest text-pink-lightest p-12">
+        <div className="footer-wrapper max-w-md mx-auto text-center">
+            <p className="mb-3">&copy; 2019 - Leticia Ortiz</p>
+            <div
+                id="rrss"
+                className="text-center md:mt-0 mb-3"
+            >
+                <div className="text-2xl">
+                    <a
+                        target="_blank"
+                        className="text-pink-lightest hover:text-pink-dark transition-text-color pr-4"
+                        href="https://www.facebook.com/leticiaortizescritora/"
+                        alt="Facebook Leticia Ortiz Escritora"
+                        title="Facebook Leticia Ortiz Escritora"
+                    >
+                        <FaFacebook />
+                    </a>
+                    <a
+                        target="_blank"
+                        className="text-pink-lightest hover:text-pink-dark transition-text-color"
+                        href="https://www.instagram.com/leticiaortiz_escritora/"
+                        alt="Instagram Leticia Ortiz Escritora"
+                        title="Instagram Leticia Ortiz Escritora"
+                    >
+                        <FaInstagram />
+                    </a>
+                </div>
+            </div>
+            <p>
+                Realizado por <a href="https://github.com/orgs/thecodingfamilyes/teams" className="text-pink-lightest hover:text-pink-dark no-underline" alt="Github The Coding Family" title="Github The Coding Family">The Coding Family</a>
+            </p>
+        </div>
+    </footer>
+);
+
+export default Footer;

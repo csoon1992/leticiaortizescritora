@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import Contact from '../sections/Contact';
 import Synopsis from '../sections/Synopsis';
 import Author from '../sections/Author';
+import Footer from '../sections/Footer';
 
 const IndexPage = () => (
     <Layout>
@@ -26,6 +27,8 @@ const IndexPage = () => (
         <Synopsis />
         <Contact />
         <Author />
+
+        <Footer/>
     </Layout>
 );
 
