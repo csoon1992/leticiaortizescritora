@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import CtaGroup from '../components/CtaGroup';
 
 const Synopsis = () => (
-    <div id="section-synopsis" className="p-8">
+    <div id="section-synopsis" className="p-8 bg-white">
         <div className="flex flex-row content-center items-stretch container  mx-auto">
             <div className="max-w-md">
                 <SectionTitle className="uppercase">

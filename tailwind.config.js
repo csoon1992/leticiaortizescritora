@@ -545,6 +545,7 @@ module.exports = {
         '64': '16rem',
         full: '100%',
         screen: '100vh',
+        s75: '75vh',
     },
 
     /*
@@ -897,8 +898,8 @@ module.exports = {
         minHeight: ['responsive'],
         minWidth: ['responsive'],
         negativeMargin: ['responsive'],
-        objectFit: false,
-        objectPosition: false,
+        objectFit: ['responsive'],
+        objectPosition: ['responsive'],
         opacity: ['responsive'],
         outline: ['focus'],
         overflow: ['responsive'],
