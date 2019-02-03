@@ -1,6 +1,4 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => (
@@ -8,7 +6,7 @@ const Footer = () => (
         <div className="footer-wrapper max-w-md mx-auto text-center">
             <p className="mb-3">&copy; 2019 - Leticia Ortiz</p>
             <div
-                id="rrss"
+                id="rrss-footer"
                 className="text-center md:mt-0 mb-3"
             >
                 <div className="text-2xl">
