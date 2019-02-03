@@ -58,7 +58,7 @@ export function handler(event, context, callback) {
         } else {
             callback(null, {
                 statusCode: 200,
-                body: '',
+                body: 'OK',
             });
         }
     });

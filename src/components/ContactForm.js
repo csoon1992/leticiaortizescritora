@@ -24,6 +24,8 @@ class ContactForm extends React.Component {
     handleSubmit(e) {
         const form = e.target;
 
+        e.preventDefault();
+
         fetch('/', {
             method: 'POST',
             headers: {
@@ -53,8 +55,6 @@ class ContactForm extends React.Component {
                     .catch(error => console.error(error));
             })
             .catch(error => alert(error));
-
-        e.preventDefault();
     }
 
     handleChange(e) {
@@ -70,7 +70,7 @@ class ContactForm extends React.Component {
                 className="md:w-1/2 mx-auto"
                 data-netlify="true"
                 netlify-honeypot="full-name"
-                onSubmit={this.handleSubmit}
+                onSubmit={this.handleSubmit.bind(this)}
             >
                 <SectionTitle>Contacto</SectionTitle>
 
@@ -105,7 +105,7 @@ class ContactForm extends React.Component {
                     id="name"
                     name="name"
                     value={name}
-                    onChange={this.handleChange}
+                    onChange={this.handleChange.bind(this)}
                     type="text"
                     placeholder="Tu nombre..."
                     required
@@ -123,7 +123,7 @@ class ContactForm extends React.Component {
                     id="email"
                     name="email"
                     value={email}
-                    onChange={this.handleChange}
+                    onChange={this.handleChange.bind(this)}
                     type="email"
                     placeholder="ejemplo@ejemplo.com"
                     required
@@ -141,7 +141,7 @@ class ContactForm extends React.Component {
                     placeholder="Tu mensaje..."
                     id="message"
                     name="message"
-                    onChange={this.handleChange}
+                    onChange={this.handleChange.bind(this)}
                     value={message}
                     rows="8"
                     required
