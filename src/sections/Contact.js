@@ -25,20 +25,6 @@ const Contact = () => (
                 <div className="container mx-auto">
                     <div className="md:flex md:flex-row md:items-stretch py-8 ">
                         <ContactForm />
-                        <div className="flex flex-row items-center content-center p-8 flex-1">
-                            <Img
-                                className="w-full"
-                                alt="Firma"
-                                key={
-                                    data.firma.edges[0].node.childImageSharp
-                                        .fluid.src
-                                }
-                                fluid={
-                                    data.firma.edges[0].node.childImageSharp
-                                        .fluid
-                                }
-                            />
-                        </div>
                     </div>
                 </div>
             </div>

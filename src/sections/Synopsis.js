@@ -5,11 +5,11 @@ import Img from 'gatsby-image';
 import CtaGroup from '../components/CtaGroup';
 
 const Synopsis = () => (
-    <div id="section-synopsis" className="p-8 bg-white">
-        <div className="flex flex-row content-center items-stretch container  mx-auto">
+    <div id="section-synopsis" className="p-8 pt-10">
+        <div className="flex flex-row content-center items-stretch container mx-auto">
             <div className="max-w-md">
                 <SectionTitle className="uppercase">
-                    Kika, nada pasa hasta que pasa
+                    <span className="text-red">Kika,</span> nada pasa hasta que <span className="text-red">pasa</span>
                 </SectionTitle>
                 <div className="font-serif text-base leading-normal pl-0 py-0">
                     <p className="mb-2">
