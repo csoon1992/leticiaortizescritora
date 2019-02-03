@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => (
-    <footer id="section-footer" className="bg-pink-darkest text-pink-lightest p-12">
+    <footer id="section-footer" className="bg-pink-darkest text-pink-lightest px-8 py-10">
         <div className="footer-wrapper max-w-md mx-auto text-center">
             <p className="mb-3">&copy; 2019 - Leticia Ortiz</p>
             <div
