@@ -1,7 +1,7 @@
 const sendMail = require('sendmail')();
-const { validateEmail, validateLength } = require('../utils/validations');
+import { validateEmail, validateLength } from '../utils/validations';
 
-exports.handler = (event, context, callback) => {
+export function handler(event, context, callback) {
     const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'piticonejo@gmail.com';
 
     if (!CONTACT_EMAIL) {
@@ -62,4 +62,4 @@ exports.handler = (event, context, callback) => {
             });
         }
     });
-};
+}
