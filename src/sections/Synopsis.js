@@ -47,6 +47,8 @@ const Synopsis = () => (
                     </p>
                 </div>
 
+                <h3 className="mt-5">¡Ya a la venta 2ª edición!</h3>
+
                 <CtaGroup />
             </div>
 
