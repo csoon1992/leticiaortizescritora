@@ -1,3 +1,7 @@
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
     siteMetadata: {
         title: 'Leticia Ortiz, escritora',
@@ -35,6 +39,16 @@ module.exports = {
                         policy: [{ userAgent: '*', allow: '/' }],
                     },
                 },
+            },
+        },
+        {
+            resolve: 'gatsby-source-contentful',
+            options: {
+                spaceId: 'hjex8jsb5122',
+                // Learn about environment variables: https://gatsby.dev/env-vars
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+                downloadLocal: true,
+                localeFilter: locale => locale.code === 'es',
             },
         },
         'gatsby-transformer-sharp',

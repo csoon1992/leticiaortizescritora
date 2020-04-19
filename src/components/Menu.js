@@ -8,7 +8,7 @@ const Menu = ({ siteTitle }) => (
         <div className="flex flex-wrap items-center justify-between mx-auto py-6 md:py-6 px-8 lg:py-12 lg:px-16">
             <Link
                 to="/"
-                className="flex md:inline-block w-auto md:w-2/6 lg:w-1/6 no-underline text-grey-darkest"
+                className="flex md:inline-block w-auto md:w-2/6 lg:w-1/6  text-grey-darkest"
             >
                 <span className="font-bold text-xl tracking-tight">
                     {siteTitle}
@@ -22,21 +22,21 @@ const Menu = ({ siteTitle }) => (
                 <div className="text-md sm:text-lg lg:text-xl md:text-left">
                     <AnchorLink
                         href="#section-synopsis"
-                        className="block inline-block mt-1 sm:mt-4 px-0 pr-2 sm:px-4 lg:px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
+                        className="block inline-block mt-1 sm:mt-4 px-0 pr-2 sm:px-4 lg:px-12 md:mt-0  text-grey-darkest hover:text-pink-dark transition-text-color"
                     >
                         Sinopsis
                     </AnchorLink>
 
                     <AnchorLink
                         href="#section-contact"
-                        className="block inline-block mt-1 sm:mt-4 px-4 lg:px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
+                        className="block inline-block mt-1 sm:mt-4 px-4 lg:px-12 md:mt-0  text-grey-darkest hover:text-pink-dark transition-text-color"
                     >
                         Contacto
                     </AnchorLink>
 
                     <AnchorLink
                         href="#section-author"
-                        className="block inline-block mt-1 sm:mt-4 px-4 lg:px-12 md:mt-0 no-underline text-grey-darkest hover:text-pink-dark transition-text-color"
+                        className="block inline-block mt-1 sm:mt-4 px-4 lg:px-12 md:mt-0  text-grey-darkest hover:text-pink-dark transition-text-color"
                     >
                         Autora
                     </AnchorLink>

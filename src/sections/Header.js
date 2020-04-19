@@ -16,7 +16,7 @@ const handleClick = ev => {
 const Header = ({ siteTitle }) => (
     <header>
         <div className="header-section font-sans h-screen text-grey-darkest bg-pink-lightest relative overflow-hidden">
-            <div className="h-screen absolute pin-t pin-x z-10">
+            <div className="h-screen absolute top-0 inset-x-0 z-10">
                 <div className="flex flex-col h-screen">
                     <Menu siteTitle={siteTitle} />
                     <div className="flex-1 flex flex-row content-wrapper text-grey-darkest items-stretch justify-start">
@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => (
                     </div>
                 </div>
             </div>
-            <div className="absolute pin-b pin-x h-screen relative z-0">
+            <div className="absolute bottom-0 inset-x-0 h-screen relative z-0">
                 <div className="flex flex-row-reverse justify-stretch content-stretch items-end h-screen overflow-hidden">
                     <StaticQuery
                         query={graphql`
@@ -50,7 +50,7 @@ const Header = ({ siteTitle }) => (
                             }
                         `}
                         render={data => (
-                            <div className="w-full lg:w-2/3 h-screen sm:relative push-header sm:pin-r absolute flex flex-col-reverse overflow-hidden">
+                            <div className="w-full lg:w-2/3 h-screen sm:relative push-header sm:right-0 absolute flex flex-col-reverse overflow-hidden">
                                 <Img
                                     className="ml-0 mb-0 header-image sm:w-auto h-s90 sm:h-auto"
                                     alt="Imagen cabecera"

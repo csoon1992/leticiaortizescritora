@@ -27,10 +27,12 @@ const EciButton = ({ className, href }) => (
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block text-left px-3 py-1 bg-eci text-white font-sans no-underline hover:bg-eci-darker w-32 md:w-36 rounded-lg ${className ||
+                    className={`block text-left px-3 py-1 bg-eci text-white font-sans  hover:bg-eci-darker w-32 md:w-36 rounded-lg ${className ||
                         ''}`}
                 >
-                    <span className="text-xs md:text-sm">Disponible ebook en</span>
+                    <span className="text-xs md:text-sm">
+                        Disponible ebook en
+                    </span>
                     <Img
                         className="block mt-2 ml-0 mb-0 w-full"
                         alt="Eci"
