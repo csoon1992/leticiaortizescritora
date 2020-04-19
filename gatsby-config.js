@@ -51,6 +51,7 @@ module.exports = {
                 localeFilter: locale => locale.code === 'es',
             },
         },
+        '@contentful/gatsby-transformer-contentful-richtext',
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         {

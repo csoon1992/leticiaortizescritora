@@ -24,7 +24,7 @@ const Menu = ({ siteTitle }) => (
                         href="#section-synopsis"
                         className="block inline-block mt-1 sm:mt-4 px-0 pr-2 sm:px-4 lg:px-12 md:mt-0  text-grey-darkest hover:text-pink-dark transition-text-color"
                     >
-                        Sinopsis
+                        Libros
                     </AnchorLink>
 
                     <AnchorLink

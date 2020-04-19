@@ -13,14 +13,14 @@ const handleClick = ev => {
     element.classList.toggle('hidden');
 };
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, data }) => (
     <header>
         <div className="header-section font-sans h-screen text-grey-darkest bg-pink-lightest relative overflow-hidden">
             <div className="h-screen absolute top-0 inset-x-0 z-10">
                 <div className="flex flex-col h-screen">
                     <Menu siteTitle={siteTitle} />
                     <div className="flex-1 flex flex-row content-wrapper text-grey-darkest items-stretch justify-start">
-                        <HeaderCaption />
+                        <HeaderCaption data={data} />
                     </div>
                 </div>
             </div>
@@ -74,6 +74,7 @@ const Header = ({ siteTitle }) => (
 
 Header.propTypes = {
     siteTitle: PropTypes.string,
+    data: PropTypes.object.isRequired,
 };
 
 Header.defaultProps = {

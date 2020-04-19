@@ -4,6 +4,7 @@
     "version": "2.0.0",
     "author": "Taylor Bryant <taylor@bryant.io>",
     "dependencies": {
+        "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
         "gatsby": "^2.0.76",
         "gatsby-image": "^2.0.20",
         "gatsby-plugin-google-analytics": "^2.0.13",
