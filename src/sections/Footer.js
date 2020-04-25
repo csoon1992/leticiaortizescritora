@@ -9,11 +9,11 @@ const Footer = () => (
         <div className="footer-wrapper max-w-md mx-auto text-center">
             <p className="mb-3">&copy; 2019 - Leticia Ortiz</p>
             <div id="rrss-footer" className="text-center md:mt-0 mb-3">
-                <div className="text-2xl">
+                <div className="text-2xl flex space-x-3 items-center justify-center content-center">
                     <a
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="text-pink-lightest hover:text-pink-dark transition-text-color pr-4"
+                        className="text-pink-lightest hover:text-pink-dark transition-text-color inline-block"
                         href="https://www.facebook.com/leticiaortizescritora/"
                         alt="Facebook Leticia Ortiz Escritora"
                         title="Facebook Leticia Ortiz Escritora"
@@ -23,7 +23,7 @@ const Footer = () => (
                     <a
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="text-pink-lightest hover:text-pink-dark transition-text-color"
+                        className="text-pink-lightest hover:text-pink-dark transition-text-color inline-block"
                         href="https://www.instagram.com/leticiaortiz_escritora/"
                         alt="Instagram Leticia Ortiz Escritora"
                         title="Instagram Leticia Ortiz Escritora"

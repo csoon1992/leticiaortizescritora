@@ -11,7 +11,7 @@ function BookContent({ book: { title, description, cover } }) {
                 <SectionTitle className="uppercase">{title}</SectionTitle>
 
                 <div
-                    className="font-serif text-base leading-normal pl-0 py-0"
+                    className="font-serif text-base leading-normal pl-0 py-0 markdown"
                     dangerouslySetInnerHTML={{ __html: description }}
                 ></div>
 

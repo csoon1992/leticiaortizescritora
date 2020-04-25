@@ -6,13 +6,6 @@ import Menu from '../components/Menu';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-const handleClick = ev => {
-    ev.preventDefault();
-    const element = document.getElementById('nav');
-    element.classList.toggle('block');
-    element.classList.toggle('hidden');
-};
-
 const Header = ({ siteTitle, data }) => (
     <header>
         <div className="header-section font-sans h-screen text-grey-darkest bg-pink-lightest relative overflow-hidden">

@@ -1,3 +1,5 @@
+const resolveConfig = require('tailwindcss/resolveConfig');
+const tailwindConfig = require('./tailwind.config.js');
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
 });
@@ -66,12 +68,29 @@ module.exports = {
                 icon: 'src/images/firma.png', // This path is relative to the root of the site.
             },
         },
-        'gatsby-plugin-postcss',
+        {
+            resolve: 'gatsby-plugin-postcss',
+            options: {
+                postCssPlugins: [
+                    require('postcss-preset-env')({
+                        stage: 2,
+                        features: {
+                            'nesting-rules': true,
+                        },
+                    }),
+                    require('tailwindcss')(tailwindConfig),
+                    require('autoprefixer'),
+                    ...(process.env.NODE_ENV === 'production'
+                        ? [require('cssnano')]
+                        : []),
+                ],
+            },
+        },
         {
             resolve: 'gatsby-plugin-purgecss',
             options: {
                 tailwind: true,
-                purgeOnly: ['src/css/style.css'], // Purge only tailwind
+                purgeOnly: ['src/css/style.css'],
             },
         },
 
