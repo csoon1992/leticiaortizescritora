@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SectionTitle from './SectionTitle';
 import Img from 'gatsby-image';
 import CtaGroup from './CtaGroup';
+import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
 function BookContent({ book: { title, description, cover } }) {
     return (
@@ -10,10 +11,9 @@ function BookContent({ book: { title, description, cover } }) {
             <div className="lg:max-w-md">
                 <SectionTitle className="uppercase">{title}</SectionTitle>
 
-                <div
-                    className="font-serif text-base leading-normal pl-0 py-0 markdown"
-                    dangerouslySetInnerHTML={{ __html: description }}
-                ></div>
+                <div className="font-serif text-base leading-normal pl-0 py-0 markdown">
+                    {description && renderRichText(description)}
+                </div>
 
                 <CtaGroup />
             </div>

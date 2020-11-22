@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
                 image: book.portada.localFile.childImageSharp,
             },
             position: book.position,
-            description: book.description.childContentfulRichText.html,
+            description: book.description,
         };
     });
 
@@ -54,9 +54,7 @@ export const query = graphql`
         contentfulHeroContent {
             title
             content {
-                childContentfulRichText {
-                    html
-                }
+                raw
             }
         }
 
@@ -77,9 +75,7 @@ export const query = graphql`
                         }
                     }
                     description {
-                        childContentfulRichText {
-                            html
-                        }
+                        raw
                     }
                     position
                 }

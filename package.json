@@ -53,7 +53,7 @@
         "eslint": "^5.13.0",
         "eslint-plugin-react": "^7.12.4",
         "gatsby-plugin-postcss": "^2.2.4",
-        "gatsby-source-contentful": "^2.2.9",
+        "gatsby-source-contentful": "^4.1.0",
         "postcss-nested": "^4.2.1",
         "postcss-nested-ancestors": "^2.0.0",
         "postcss-preset-env": "^6.7.0",
