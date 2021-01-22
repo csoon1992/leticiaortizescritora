@@ -10,82 +10,87 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 const IndexPage = ({ data }) => {
-    const books = data.allContentfulBooks.edges.map(({ node }) => {
-        const book = node;
-        return {
-            id: book.id,
-            title: book.title,
-            cover: {
-                title: book.portada.title,
-                image: book.portada.localFile.childImageSharp,
-            },
-            position: book.position,
-            description: book.description,
-        };
-    });
+  const books = data.allContentfulBooks.edges.map(({ node }) => {
+    const book = node;
+    return {
+      id: book.id,
+      title: book.title,
+      cover: {
+        title: book.portada.title,
+        image: book.portada.localFile.childImageSharp,
+      },
+      position: book.position,
+      description: book.description,
+      links: book.buyLinks,
+    };
+  });
 
-    return (
-        <Layout>
-            <SEO
-                title="Home"
-                keywords={[
-                    'novelas',
-                    'leticia ortiz',
-                    'kika, nada pasa hasta que pasa',
-                    'escritora',
-                    'humor',
-                    'romance',
-                ]}
-            />
+  return (
+    <Layout>
+      <SEO
+        title="Home"
+        keywords={[
+          'novelas',
+          'leticia ortiz',
+          'kika, nada pasa hasta que pasa',
+          'escritora',
+          'humor',
+          'romance',
+        ]}
+      />
 
-            <Header siteTitle="Leticia Ortiz escritora" data={data} />
+      <Header siteTitle="Leticia Ortiz escritora" data={data} />
 
-            <Books books={books} />
-            <Contact />
-            <Author />
+      <Books books={books} />
+      <Contact />
+      <Author />
 
-            <Footer />
-        </Layout>
-    );
+      <Footer />
+    </Layout>
+  );
 };
 
 export const query = graphql`
-    {
-        contentfulHeroContent {
-            title
-            content {
-                raw
-            }
-        }
-
-        allContentfulBooks {
-            edges {
-                node {
-                    id
-                    title
-                    portada {
-                        id
-                        title
-                        localFile {
-                            childImageSharp {
-                                fluid(maxWidth: 350, webpQuality: 90) {
-                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                }
-                            }
-                        }
-                    }
-                    description {
-                        raw
-                    }
-                    position
-                }
-            }
-        }
+  {
+    contentfulHeroContent {
+      title
+      content {
+        raw
+      }
     }
+
+    allContentfulBooks {
+      edges {
+        node {
+          id
+          title
+          portada {
+            id
+            title
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 350, webpQuality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+          }
+          description {
+            raw
+          }
+          position
+          buyLinks {
+            vendor
+            link
+          }
+        }
+      }
+    }
+  }
 `;
 
 IndexPage.propTypes = {
-    data: PropTypes.object,
+  data: PropTypes.object,
 };
 
 export default IndexPage;

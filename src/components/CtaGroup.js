@@ -1,26 +1,34 @@
-import React, { Fragment } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import AmazonButton from './AmazonButton';
 import EciButton from './EciButton';
-import LetrameButton from './LetrameButton';
+import CasalibroButton from './CasalibroButton';
 
-const CtaGroup = ({ className, href }) => (
-    <div className="cta mt-6 flex items-strech flex-wrap sm:flex-no-wrap">
-        <AmazonButton
-            className="mr-3 mb-3 sm:mb-0"
-            href="https://www.amazon.es/dp/8417779310/ref=cm_sw_em_r_mt_dp_U_iRBvCb3BTG6MR"
-        />
+function CtaGroup({ className, links }) {
+  const buttonComponents = {
+    amazon: AmazonButton,
+    corteingles: EciButton,
+    casalibro: CasalibroButton,
+  };
 
-        <EciButton
-            href="https://www.elcorteingles.es/ebooks/tagus-9788417818395-kika-nada-pasa-hasta-que-pasa-ebook/"
-            className="mr-3 mb-3 sm:mb-0"
-        />
+  const linksContent = links.map(({ vendor, link }, index) => {
+    const ButtonComponent = buttonComponents[vendor];
 
-        <LetrameButton 
-            href="https://www.letrame.com/producto/kika-nada-pasa-hasta-que-pasa/"
-            className="mb-3 sm:mb-0"
-        />
+    return <ButtonComponent href={link} key={index}></ButtonComponent>;
+  });
+
+  return (
+    <div
+      className={`cta mt-6 flex items-center flex-wrap sm:flex-no-wrap space-x-3  ${className}`}
+    >
+      {linksContent}
     </div>
-);
+  );
+}
+
+CtaGroup.propTypes = {
+  className: PropTypes.string,
+  links: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default CtaGroup;

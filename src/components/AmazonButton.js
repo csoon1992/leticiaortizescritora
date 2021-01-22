@@ -1,46 +1,56 @@
 import React, { Fragment } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
-const AmazonButton = ({ className, href }) => (
-    <StaticQuery
-        query={graphql`
-            query AmazonLogoQuery {
-                logos: allFile(
-                    filter: { relativePath: { eq: "amazon-light.png" } }
-                ) {
-                    edges {
-                        node {
-                            childImageSharp {
-                                fluid(maxWidth: 92) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        `}
-        render={data => (
-            <Fragment>
-                <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block text-left px-3 py-1 bg-amazon text-white font-sans  hover:bg-amazon-darker w-32 md:w-36 rounded-lg ${className ||
-                        ''}`}
-                >
-                    <span className="text-xs md:text-sm">Disponible en</span>
-                    <Img
-                        className="block mt-2 ml-0 mb-0 w-full"
-                        alt="Amazon"
-                        key={data.logos.edges[0].node.childImageSharp.fluid.src}
-                        fluid={data.logos.edges[0].node.childImageSharp.fluid}
-                    />
-                </a>
-            </Fragment>
-        )}
-    />
-);
+const AmazonButton = ({ className, href }) => {
+  const image = useStaticQuery(graphql`
+    query AmazonImage {
+      logoImage: file(relativePath: { eq: "amazon-light.png" }) {
+        childImageSharp {
+          fixed(height: 30, quality: 93, fit: CONTAIN) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            aspectRatio
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <div
+      className={`transition duration-300 text-left bg-amazon text-white font-sans  hover:bg-amazon-darker rounded-lg relative ${
+        className || ''
+      }`}
+    >
+      <div className="flex flex-col space-y-2 px-3 py-1" aria-hidden="true">
+        <div aria-hidden="true" className="text-xs md:text-sm">
+          Disponible en
+        </div>
+        <div aria-hidden="true">
+          <Img
+            className="h-full"
+            alt="Amazon"
+            {...image.logoImage.childImageSharp}
+          />
+        </div>
+      </div>
+
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="absolute top-0 bottom-0 w-full z-10 m-0 left-0"
+      >
+        <span className="sr-only">Disponible en amazon</span>
+      </a>
+    </div>
+  );
+};
+
+AmazonButton.propTypes = {
+  className: PropTypes.string,
+  href: PropTypes.string.isRequired,
+};
 
 export default AmazonButton;

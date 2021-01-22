@@ -1,77 +1,46 @@
-/* eslint-disable react/jsx-no-target-blank */
 import PropTypes from 'prop-types';
 import React from 'react';
 import HeaderCaption from '../components/HeaderCaption';
 import Menu from '../components/Menu';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Logo from '../components/Logo';
+import { useStaticQuery, graphql } from 'gatsby';
 
-const Header = ({ siteTitle, data }) => (
+const Header = function ({ siteTitle, data }) {
+  const homeImage = useStaticQuery(graphql`
+    {
+      homeImage: file(relativePath: { eq: "header-section-bg.png" }) {
+        childImageSharp {
+          fluid(maxHeight: 1600, quality: 93) {
+            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+    }
+  `);
+
+  return (
     <header>
-        <div className="header-section font-sans h-screen text-grey-darkest bg-pink-lightest relative overflow-hidden">
-            <div className="h-screen absolute top-0 inset-x-0 z-10">
-                <div className="flex flex-col h-screen">
-                    <Menu siteTitle={siteTitle} />
-                    <div className="flex-1 flex flex-row content-wrapper text-grey-darkest items-stretch justify-start">
-                        <HeaderCaption data={data} />
-                    </div>
-                </div>
-            </div>
-            <div className="absolute bottom-0 inset-x-0 h-screen relative z-0">
-                <div className="flex flex-row-reverse justify-stretch content-stretch items-end h-screen overflow-hidden">
-                    <StaticQuery
-                        query={graphql`
-                            query HeaderQuery {
-                                header: allFile(
-                                    filter: {
-                                        relativePath: {
-                                            eq: "header-section-bg.png"
-                                        }
-                                    }
-                                ) {
-                                    edges {
-                                        node {
-                                            childImageSharp {
-                                                fluid(maxHeight: 1600) {
-                                                    ...GatsbyImageSharpFluid
-                                                    presentationWidth
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        `}
-                        render={data => (
-                            <div className="w-full lg:w-2/3 h-screen sm:relative push-header sm:right-0 absolute flex flex-col-reverse overflow-hidden">
-                                <Img
-                                    className="ml-0 mb-0 header-image sm:w-auto h-s90 sm:h-auto"
-                                    alt="Imagen cabecera"
-                                    key={
-                                        data.header.edges[0].node
-                                            .childImageSharp.fluid.src
-                                    }
-                                    fluid={
-                                        data.header.edges[0].node
-                                            .childImageSharp.fluid
-                                    }
-                                />
-                            </div>
-                        )}
-                    />
-                </div>
-            </div>
+      <div className="bg-primary-100 h-screen w-full flex flex-col items-stretch justify-center relative">
+        <div className="sm:flex sm:flex-row space-x-3 space-y-3 p-5 sm:items-center sm:justify-between z-10 relative">
+          <Logo></Logo>
+          <Menu siteTitle={siteTitle} />
         </div>
+        <div className="flex-1 flex flex-row content-wrapper text-grey-warm-800 items-stretch justify-start z-0 relative">
+          <HeaderCaption data={data} image={homeImage.homeImage} />
+        </div>
+      </div>
     </header>
-);
+  );
+};
 
 Header.propTypes = {
-    siteTitle: PropTypes.string,
-    data: PropTypes.object.isRequired,
+  siteTitle: PropTypes.string,
+  data: PropTypes.object.isRequired,
 };
 
 Header.defaultProps = {
-    siteTitle: '',
+  siteTitle: '',
 };
 
 export default Header;
