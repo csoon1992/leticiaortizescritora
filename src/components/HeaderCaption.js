@@ -5,7 +5,6 @@ import Img from 'gatsby-image';
 import CtaMain from './CtaMain';
 
 function HeaderCaption({
-  image,
   data: {
     contentfulHeroContent: { title, content },
   },
@@ -25,14 +24,7 @@ function HeaderCaption({
         className="self-stretch justify-self-end flex-1 relative"
         aria-hidden="true"
       >
-        <div className="absolute top-0 bottom-0 w-full flex flex-row items-end justify-end">
-          <Img
-            style={{ height: '100%', width: '100%' }}
-            imgStyle={{ objectFit: 'contain' }}
-            fluid={image.childImageSharp.fluid}
-            loading="eager"
-          ></Img>
-        </div>
+        <div className="absolute top-0 bottom-0 w-full flex flex-row items-end justify-end bg-header xl:bg-none bg-contain bg-bottom bg-no-repeat "></div>
       </div>
     </div>
   );
@@ -40,7 +32,6 @@ function HeaderCaption({
 
 HeaderCaption.propTypes = {
   data: PropTypes.object.isRequired,
-  image: PropTypes.object,
 };
 
 export default HeaderCaption;

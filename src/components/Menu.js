@@ -21,10 +21,10 @@ const menuContainerAnimation = {
 
 const Menu = ({ siteTitle }) => (
   <nav className="bg-transparent">
-    <div className="flex flex-row flex-wrap items-center space-x-3">
+    <div className="flex flex-row flex-wrap items-center space-x-3 text-2xl ">
       <div id="nav" className="sm:text-left flex-1 md:pl-3">
         <motion.div
-          className="text-xl sm:text-lg lg:text-xl sm:text-left flex items-center justify-center space-x-6"
+          className="sm:text-lg lg:text-xl sm:text-left flex items-center justify-center space-x-6"
           variants={menuContainerAnimation}
           initial="hidden"
           animate="visible"

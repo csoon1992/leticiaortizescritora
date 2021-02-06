@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
+
+const BorderedText = styled.span`
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5),
+    1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(255, 255, 255, 0.5),
+    1px 1px 0 rgba(255, 255, 255, 0.5), 1px 1px 0 rgba(255, 255, 255, 0.5);
+`;
 
 const menuItemAnimation = {
   hidden: { y: 20, opacity: 0 },
@@ -16,9 +23,9 @@ function MenuItem({ href, title }) {
     <motion.span className="inline-block" variants={menuItemAnimation}>
       <AnchorLink
         href={href}
-        className="transition duration-300 text-grey-warm-800 hover:text-primary-800 "
+        className="xl:text-2xl transition duration-300 text-grey-warm-800 hover:text-primary-800 "
       >
-        {title}
+        <BorderedText>{title}</BorderedText>
       </AnchorLink>
     </motion.span>
   );

@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: 'Leticia Ortiz, escritora',
     description:
-            'Leticia Ortiz, escritora. Nuevo libro: Kika, nada pasa hasta que pasa.',
+      'Leticia Ortiz, escritora. Nuevo libro: Kika, nada pasa hasta que pasa.',
     author: '@csoon1992 and @algm',
     siteUrl: 'https://leticiaortizescritora.com',
   },
@@ -50,7 +50,7 @@ module.exports = {
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
-        localeFilter: locale => locale.code === 'es',
+        localeFilter: (locale) => locale.code === 'es',
       },
     },
     'gatsby-transformer-sharp',
@@ -67,6 +67,7 @@ module.exports = {
         icon: 'src/images/firma.png', // This path is relative to the root of the site.
       },
     },
+    { resolve: 'gatsby-plugin-styled-components' },
     {
       resolve: 'gatsby-plugin-postcss',
     },
@@ -74,7 +75,7 @@ module.exports = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         tailwind: true,
-        purgeOnly: ['src/css/style.css'],
+        purgeOnly: ['src/css/global.css'],
       },
     },
 

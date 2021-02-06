@@ -164,7 +164,11 @@ module.exports = {
       ],
     },
 
-    extend: {},
+    extend: {
+      backgroundImage: (theme) => ({
+        header: 'url(/img/background/header-bg.png)',
+      }),
+    },
   },
   variants: {
     extend: {},
