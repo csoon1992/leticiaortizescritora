@@ -166,7 +166,7 @@ module.exports = {
 
     extend: {
       backgroundImage: (theme) => ({
-        header: 'url(/img/background/header-bg.png)',
+        header: 'url(/img/background/header-bg.webp)',
       }),
     },
   },
