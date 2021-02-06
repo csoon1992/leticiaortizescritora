@@ -22,7 +22,7 @@ const Header = function ({ siteTitle, data }) {
   return (
     <header>
       <div className="bg-primary-100 h-screen w-full flex flex-col items-stretch justify-center relative">
-        <div className="sm:flex sm:flex-row space-x-3 space-y-3 p-5 sm:items-center sm:justify-between z-10 relative">
+        <div className="sm:flex sm:flex-row space-x-3 space-y-3 p-5 sm:items-center sm:justify-between z-10 relative container mx-auto max-w-screen-lg">
           <Logo></Logo>
           <Menu siteTitle={siteTitle} />
         </div>

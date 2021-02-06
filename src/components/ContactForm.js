@@ -1,173 +1,152 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from './SectionTitle';
 import FormSuccess from './FormSuccess';
 
-const encode = data => {
-    return Object.keys(data)
-        .map(
-            key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-        )
-        .join('&');
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 };
 
-class ContactForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            message: '',
-            submitted: false,
-        };
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: null,
+    email: null,
+    message: null,
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const onChange = (field, value) => {
+    setFormData({
+      ...formData,
+      [field]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    const form = e.target;
+
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          'form-name': form.getAttribute('name'),
+          ...formData,
+        }),
+      });
+
+      setSubmitted(true);
+
+      console.log(response);
+    } catch (error) {
+      console.error(error);
     }
+  };
 
-    handleSubmit(e) {
-        const form = e.target;
+  if (submitted) {
+    return (
+      <div className="container mx-auto max-w-screen-lg text-center space-y-3">
+        <SectionTitle>Contacto</SectionTitle>
 
-        e.preventDefault();
+        <div className="text-left max-w-screen-md mx-auto py-5">
+          <FormSuccess />
+        </div>
+      </div>
+    );
+  }
 
-        fetch('/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: encode({
-                'form-name': form.getAttribute('name'),
-                ...this.state,
-            }),
-        })
-            .then(() => {
-                this.setState({ submitted: true });
+  return (
+    <div className="container mx-auto max-w-screen-lg text-center space-y-3">
+      <SectionTitle>Contacto</SectionTitle>
 
-                fetch('/.netlify/functions/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        'form-name': form.getAttribute('name'),
-                        ...this.state,
-                    }),
-                })
-                    .then(response => {
-                        console.log(response);
-                    })
-                    .catch(error => console.error(error));
-            })
-            .catch(error => alert(error));
-    }
+      <div className="text-grey-warm-700 text-lg font-serif">
+        <p>Rellena este formulario si quieres hacer alguna pregunta.</p>
+        <p>Si deseas un libro firmado, indícalo en el comentario.</p>
+      </div>
 
-    handleChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value,
-        });
-    }
+      <form
+        name="contact-form"
+        data-netlify="true"
+        className="space-y-5 max-w-screen-sm mx-auto text-left py-3"
+        netlify-honeypot="full-name"
+        onSubmit={handleSubmit}
+      >
+        <input type="hidden" name="form-name" value="contact-form" />
+        <input
+          type="hidden"
+          name="subject"
+          value="Formulario de contacto - Leticia Ortiz Escritora"
+        />
 
-    render() {
-        let content = (
-            <form
-                name="contact-form"
-                className="md:w-1/2 mx-auto"
-                data-netlify="true"
-                netlify-honeypot="full-name"
-                onSubmit={this.handleSubmit.bind(this)}
-            >
-                <SectionTitle>Contacto</SectionTitle>
+        <label className="invisible hidden" aria-hidden="true">
+          Nombre completo
+          <input name="full-name" />
+        </label>
 
-                <p className="pb-2">
-                    Rellena este formulario si quieres hacer alguna pregunta.
-                </p>
-                <p className="mb-8">
-                    Si deseas un libro firmado, indícalo en el comentario.
-                </p>
+        <div className="flex flex-row items-center justify-center space-x-3">
+          <div className="flex-1">
+            <label className="block font-bold mb-2 uppercase" htmlFor="name">
+              Tu nombre
+            </label>
 
-                <input type="hidden" name="form-name" value="contact-form" />
-                <input
-                    type="hidden"
-                    name="subject"
-                    value="Formulario de contacto - Leticia Ortiz Escritora"
-                />
+            <input
+              className="transition duration-300 w-full rounded border-grey-warm-300 focus:border-grey-warm-400 focus:ring-primary-500"
+              id="name"
+              onChange={(event) => onChange('name', event.target.value)}
+              name="name"
+              type="text"
+              placeholder="Tu nombre..."
+              required
+            />
+          </div>
 
-                <label className="invisible hidden">
-                    Nombre completo
-                    <input name="full-name" />
-                </label>
+          <div className="flex-1">
+            <label htmlFor="email" className="block font-bold mb-2 uppercase">
+              Tu Email
+            </label>
+            <input
+              className="transition duration-300 w-full rounded border-grey-warm-300 focus:border-grey-warm-400 focus:ring-primary-500"
+              id="email"
+              name="email"
+              type="email"
+              onChange={(event) => onChange('email', event.target.value)}
+              placeholder="ejemplo@ejemplo.com"
+              required
+            />
+          </div>
+        </div>
 
-                <label
-                    className="block font-bold mb-2 text-xs uppercase"
-                    htmlFor="name"
-                >
-                    Tu nombre
-                </label>
+        <div>
+          <label className="block font-bold mb-2 uppercase" htmlFor="message">
+            Mensaje
+          </label>
 
-                <input
-                    className="appearance-none block bg-white border-color-grey-darker border mb-6 p-3 rounded-md text-grey-darker w-full"
-                    id="name"
-                    name="name"
-                    value={name}
-                    onChange={this.handleChange.bind(this)}
-                    type="text"
-                    placeholder="Tu nombre..."
-                    required
-                />
+          <textarea
+            className="transition duration-300 w-full rounded border-grey-warm-300 focus:border-grey-warm-400 focus:ring-primary-500"
+            placeholder="Tu mensaje..."
+            id="message"
+            name="message"
+            onChange={(event) => onChange('message', event.target.value)}
+            rows="8"
+            required
+          />
+        </div>
 
-                <label
-                    className="block font-bold mb-2 text-xs uppercase"
-                    htmlFor="email"
-                >
-                    Tu email
-                </label>
-
-                <input
-                    className="appearance-none block bg-white border-color-grey-darker border mb-6 p-3 rounded-md text-grey-darker w-full"
-                    id="email"
-                    name="email"
-                    value={email}
-                    onChange={this.handleChange.bind(this)}
-                    type="email"
-                    placeholder="ejemplo@ejemplo.com"
-                    required
-                />
-
-                <label
-                    className="block font-bold mb-2 text-xs uppercase"
-                    htmlFor="message"
-                >
-                    Mensaje
-                </label>
-
-                <textarea
-                    className="appearance-none bg-white border-color-grey-darker border mb-6 p-3 rounded-md text-grey-darker w-full"
-                    placeholder="Tu mensaje..."
-                    id="message"
-                    name="message"
-                    onChange={this.handleChange.bind(this)}
-                    value={message}
-                    rows="8"
-                    required
-                />
-
-                <button
-                    type="submit"
-                    className="bg-pink-darker hover:bg-pink-darkest font-serif text-lg font-normal px-12 py-3 text-md text-white rounded-lg block mx-auto"
-                >
-                    Enviar
-                </button>
-            </form>
-        );
-
-        if (this.state.submitted) {
-            content = (
-                <div name="submitted" className="mx-auto">
-                    <FormSuccess />
-                </div>
-            );
-        }
-
-        const { name, email, message } = this.state;
-
-        return content;
-    }
+        <button
+          type="submit"
+          className="bg-pink-darker hover:bg-pink-darkest active:ring-primary-500 font-serif text-lg font-normal px-12 py-3 text-md text-white rounded-lg block mx-auto"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default ContactForm;
