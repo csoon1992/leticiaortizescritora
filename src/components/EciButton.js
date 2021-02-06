@@ -19,7 +19,7 @@ const EciButton = ({ className, href }) => {
 
   return (
     <div
-      className={`transition duration-300 text-left bg-eci text-white font-sans  hover:bg-eci-darker rounded-lg relative ${
+      className={`inline-block transition duration-300 text-left bg-eci text-white font-sans  hover:bg-eci-darker rounded-lg relative ${
         className || ''
       }`}
     >

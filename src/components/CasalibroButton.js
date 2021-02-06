@@ -19,7 +19,7 @@ const CasalibroButton = ({ className, href }) => {
 
   return (
     <div
-      className={`transition duration-300 text-left bg-casalibro text-white font-sans  hover:bg-casalibro-darker rounded-lg relative ${
+      className={`inline-block transition duration-300 text-left bg-casalibro text-white font-sans  hover:bg-casalibro-darker rounded-lg relative ${
         className || ''
       }`}
     >

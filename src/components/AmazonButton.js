@@ -19,7 +19,7 @@ const AmazonButton = ({ className, href }) => {
 
   return (
     <div
-      className={`transition duration-300 text-left bg-amazon text-white font-sans  hover:bg-amazon-darker rounded-lg relative ${
+      className={`block inline-block transition duration-300 text-left bg-amazon text-white font-sans  hover:bg-amazon-darker rounded-lg relative ${
         className || ''
       }`}
     >
